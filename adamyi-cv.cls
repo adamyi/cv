@@ -320,11 +320,18 @@
 \RequirePackage[left=4.8cm,top=2cm,right=0.8cm,bottom=2.5cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
 \hypersetup{
-    colorlinks=false,       
-    linkcolor=red,          
-    citecolor=red,        
-    filecolor=red,      
-    urlcolor = red}
+  colorlinks=false,
+  linkcolor=red,
+  citecolor=red,
+  filecolor=red,
+  urlcolor=red,
+  pdftitle={CV},
+  pdfsubject={Adam Yi},
+  pdfkeywords={Resume, CV},
+  pdfauthor={Adam Yi},
+  pdfcreator={Adam Yi's modified XeLaTeX},
+  pdfproducer={Adam Yi}
+}
     
 % A fix for \href{}{} colors not working with fontspec
 \makeatletter
