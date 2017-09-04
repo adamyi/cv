@@ -8,13 +8,18 @@
 \ProcessOptions\relax
 \LoadClass{article}
 
-%%%%%%%%%%
+%%%%%%%%%%%%
 % Revision %
-%%%%%%%%%%
+%%%%%%%%%%%%
 
 \RequirePackage[en-US]{datetime2}
 \newtoks\revision
 
+\newcommand{\versionsection}{%
+    \section{last updated}
+    \today\\
+    Rev. \the\revision
+}
 
 %%%%%%%%%%
 % Colors %
@@ -94,13 +99,6 @@
   \vspace{2.5cm}
   \vspace{-2\parskip}
 }
-
-\newcommand{\versionsection}{%
-    \section{last updated}
-    \today\\
-    Rev. \the\revision
-}
-
 
 %%%%%%%%%%%%%
 % Structure %
