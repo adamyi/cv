@@ -8,6 +8,13 @@
 \ProcessOptions\relax
 \LoadClass{article}
 
+%%%%%%%%%%
+% Revision %
+%%%%%%%%%%
+
+\RequirePackage[en-US]{datetime2}
+\newtoks\revision
+
 
 %%%%%%%%%%
 % Colors %
@@ -19,6 +26,7 @@
 
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{gray}{HTML}{4D4D4D}
+\definecolor{headinggreen}{HTML}{009688}
 \definecolor{lightgray}{HTML}{999999}
 
 \definecolor{green}{HTML}{C2E15F}
@@ -37,7 +45,7 @@
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
-  \colorlet{fillheader}{gray}
+  \colorlet{fillheader}{headinggreen}
   \colorlet{header}{white}
 \fi
 \colorlet{textcolor}{gray}
@@ -87,6 +95,12 @@
   \vspace{-2\parskip}
 }
 
+\newcommand{\versionsection}{%
+    \section{last updated}
+    \today\\
+    Rev. \the\revision
+}
+
 
 %%%%%%%%%%%%%
 % Structure %
@@ -98,11 +112,11 @@
   {%
     \color{%
       \ifcase\value{colorCounter}%
+        green\or%
         blue\or%
         red\or%
-        orange\or%
-        green\or%
         purple\or%
+        orange\or%
         brown\else%
         headercolor\fi%
     } #1#2#3%
