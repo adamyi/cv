@@ -3,7 +3,9 @@ Latest version of my CV, typesetted in Helvetica and using colors inspired by Mo
 
 Uses TikZ for the header, XeTeX and fontspec to use Helvetica Neue, and textpos for the aside.
 
-Please compile using XeLaTeX.
+To compile, please run `build`. To recompile, please run `build clean` first.
+
+XeLaTeX is required.
 
 # License
 [MIT License](LICENSE)
