@@ -1,11 +1,11 @@
 # About
-Originally designed by Adrien Friggeri in 2012, open sourced under MIT license.
+[Adam Yi](https://yiad.am)'s latest version of resume made with XeLaTeX.
 
-Revised by Adam Yi in 2017, open sourced under MIT license.
+This version is revised based on Adrien Friggeri's original design in 2012 by Adam in 2017.
+
+Both the original version and my revised version are open sourced under MIT license.
 
 To compile, please run `build`. To recompile, please run `build clean` first.
-
-XeLaTeX is required.
 
 # License
 [MIT License](LICENSE)
