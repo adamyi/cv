@@ -21,10 +21,10 @@ build/cv_screen.pdf: build/cv_screen.tex build/adamyi-cv.cls
 build/adamyi-cv.cls: src/adamyi-cv.cls build
 	cp src/adamyi-cv.cls build/adamyi-cv.cls
 
-build/cv_print.tex: src/cv.tex build
+build/cv_print.tex: src/cv.tex build REVISION
 	python src/generate_versions.py
 
-build/cv_screen.tex: src/cv.tex build
+build/cv_screen.tex: src/cv.tex build REVISION
 	python src/generate_versions.py
 
 build:

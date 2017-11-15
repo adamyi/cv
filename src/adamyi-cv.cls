@@ -137,12 +137,12 @@
 }
 
 \renewcommand{\section}[1]{
-  \par\vspace{\parskip}
+  \par\vspace{0.3\parskip}
   {%
     \LARGE\headingfont\color{headercolor}%
     \@sectioncolor #1%
   }
-  \par\vspace{\parskip}
+  \par\vspace{0.5\parskip}
 }
 
 \renewcommand{\subsection}[1]{
@@ -175,8 +175,11 @@
   &\parbox[t]{15.8cm}{%
     \textbf{#1}%
     \hfill%
-    {\footnotesize\addfontfeature{Color=lightgray} #2}\\%
-    #3\vspace{\parsep}%
+    {\footnotesize\addfontfeature{Color=lightgray} #2}%
+    \begin{sloppypar}
+      #3
+      \vspace{1.2\parsep}%
+    \end{sloppypar}
   }\\}
 
 
