@@ -1,4 +1,4 @@
-\ProvidesClass{adamyi-cv}[2017/09/04 CV class]
+\ProvidesClass{adamyi-cv}[2018/05/11 CV class]
 \NeedsTeXFormat{LaTeX2e}
 
 \DeclareOption{print}{\def\@cv@print{}}
@@ -16,7 +16,7 @@
 \newtoks\revision
 
 \newcommand{\versionsection}{%
-    \section{last updated}
+    \section{last updated}\\
     \today\\
     Rev. \the\revision
 }
