@@ -31,7 +31,7 @@
 
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{gray}{HTML}{4D4D4D}
-\definecolor{headinggreen}{HTML}{009688}
+\definecolor{headingblue}{HTML}{4285F4}
 \definecolor{lightgray}{HTML}{999999}
 
 \definecolor{green}{HTML}{C2E15F}
@@ -50,7 +50,7 @@
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
-  \colorlet{fillheader}{headinggreen}
+  \colorlet{fillheader}{headingblue}
   \colorlet{header}{white}
 \fi
 \colorlet{textcolor}{gray}
