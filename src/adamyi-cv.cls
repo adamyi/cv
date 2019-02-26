@@ -137,12 +137,12 @@
 }
 
 \renewcommand{\section}[1]{
-  \par\vspace{0.3\parskip}
+  \par\vspace{.3\parskip}
   {%
     \LARGE\headingfont\color{headercolor}%
     \@sectioncolor #1%
   }
-  \par\vspace{0.5\parskip}
+  \par\vspace{.5\parskip}
 }
 
 \renewcommand{\subsection}[1]{
@@ -164,24 +164,20 @@
 % List environment %
 %%%%%%%%%%%%%%%%%%%%
 
-\setlength{\tabcolsep}{0pt}
+\usepackage{enumitem}
+\renewcommand{\labelitemii}{$\textbullet$}
 \newenvironment{entrylist}{%
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+  \begin{itemize}[leftmargin=*,align=left,noitemsep] %,itemindent=-\dimexpr\labelwidth+\labelindent+\labelsep\relax]
 }{%
-  \end{tabular*}
+  \end{itemize}
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[3]{%
-  &\parbox[t]{15.8cm}{%
-    \textbf{#1}%
+  \item[\textbf{#1}]
     \hfill%
-    {\footnotesize\addfontfeature{Color=lightgray} #2}%
-    \begin{sloppypar}
-      #3
-      \vspace{1.2\parsep}%
-    \end{sloppypar}
-  }\\}
-
+    {\footnotesize\addfontfeature{Color=lightgray} #2}\\%
+    #3\vspace{0.8em}%
+}
 
 %%%%%%%%%%%%%%
 % Side block %
@@ -346,7 +342,7 @@
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=4.8cm,top=2cm,right=0.8cm,bottom=1.5cm,nohead,nofoot]{geometry}
+\RequirePackage[left=4.8cm,top=2cm,right=0.8cm,bottom=1.2cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
 \hypersetup{
   colorlinks=false,
