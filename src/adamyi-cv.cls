@@ -105,6 +105,7 @@
 }
 
 \newcommand{\footer}{%
+  \hypersetup{hidelinks}
   \begin{tikzpicture}[remember picture,overlay]
     \node [rectangle, fill=fillheader, anchor=south, minimum width=\paperwidth, minimum height=0.5cm] (box) at (current page.south){};
     \node [anchor=west, xshift=0.2cm] (foottext) at (box.west) {\fontsize{8}{8}\color{header}\bodyfont \the\footertext};
@@ -187,6 +188,7 @@
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
 \newenvironment{aside}{%
+  \hypersetup{hidelinks}
   \let\oldsection\section
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
@@ -345,7 +347,7 @@
 \RequirePackage[left=4.8cm,top=2cm,right=0.8cm,bottom=1.2cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
 \hypersetup{
-  colorlinks=false,
+  colorlinks=true,
   linkcolor=red,
   citecolor=red,
   filecolor=red,
