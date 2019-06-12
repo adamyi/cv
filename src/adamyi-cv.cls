@@ -50,8 +50,10 @@
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
-  \colorlet{fillheader}{headingblue}
-  \colorlet{header}{white}
+  %\colorlet{fillheader}{headingblue}
+  %\colorlet{header}{white}
+  \colorlet{fillheader}{white}
+  \colorlet{header}{gray}
 \fi
 \colorlet{textcolor}{gray}
 \colorlet{headercolor}{gray}
@@ -62,6 +64,7 @@
 
 \RequirePackage[quiet]{fontspec}
 \RequirePackage{unicode-math}
+\RequirePackage{fontawesome}
 
 \newfontfamily\bodyfont[]{Helvetica Neue}
 \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
@@ -88,7 +91,7 @@
   \color{white}%
 }
 
-\newcommand{\header}[3]{%
+\newcommand{\headerold}[3]{%
   \begin{tikzpicture}[remember picture,overlay]
     \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
@@ -103,6 +106,29 @@
   \vspace{2.5cm}
   \vspace{-2\parskip}
 }
+\newcommand{\header}[4]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=2.0cm] (box) at (current page.north){};
+    \node [anchor=south] (name) at (box.south) {%
+      \fontsize{40pt}{72pt}\color{header}%
+      {\thinfont #1}{\bodyfont  #2}
+    };
+    \node [anchor=south west, align=left] at (box.south west) {%
+      \hspace{1.4cm}\begin{tabular}{l}
+        #3
+      \end{tabular}
+    };
+    \node [anchor=south east, align=right] at (box.south east) {%
+      \fontsize{40pt}{72pt}
+      \begin{tabular}{r}
+        #4
+      \end{tabular}\hspace{1.3cm}
+    };
+  \end{tikzpicture}
+  \vspace{1cm}
+  % \vspace{-2\parskip}
+}
+
 
 \newcommand{\footer}{%
   \hypersetup{hidelinks}
@@ -138,12 +164,12 @@
 }
 
 \renewcommand{\section}[1]{
-  \par\vspace{.3\parskip}
+  % \par\vspace{.3\parskip}
   {%
     \LARGE\headingfont\color{headercolor}%
     \@sectioncolor #1%
   }
-  \par\vspace{.5\parskip}
+  % \par\vspace{.2\parskip}
 }
 
 \renewcommand{\subsection}[1]{
@@ -168,7 +194,7 @@
 \usepackage{enumitem}
 \renewcommand{\labelitemii}{$\textbullet$}
 \newenvironment{entrylist}{%
-  \begin{itemize}[leftmargin=*,align=left,noitemsep] %,itemindent=-\dimexpr\labelwidth+\labelindent+\labelsep\relax]
+  \begin{itemize}[leftmargin=*,align=left,noitemsep]
 }{%
   \end{itemize}
 }
@@ -177,7 +203,7 @@
   \item[\textbf{#1}]
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #2}\\%
-    #3\vspace{0.8em}%
+    #3\vspace{0.6em}%
 }
 
 %%%%%%%%%%%%%%
@@ -344,10 +370,10 @@
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=4.8cm,top=2cm,right=0.8cm,bottom=1.2cm,nohead,nofoot]{geometry}
+\RequirePackage[left=1.3cm,top=0.8cm,right=1.3cm,bottom=1.0cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
 \hypersetup{
-  colorlinks=true,
+  colorlinks=false,
   linkcolor=red,
   citecolor=red,
   filecolor=red,
