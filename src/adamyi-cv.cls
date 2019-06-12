@@ -135,7 +135,8 @@
   \begin{tikzpicture}[remember picture,overlay]
     \node [rectangle, fill=fillheader, anchor=south, minimum width=\paperwidth, minimum height=0.5cm] (box) at (current page.south){};
     \node [anchor=west, xshift=0.2cm] (foottext) at (box.west) {\fontsize{8}{8}\color{header}\bodyfont \the\footertext};
-    \node [anchor=east, xshift=-0.2cm] (footpage) at (box.east) {\fontsize{8}{8}\color{header}\bodyfont \arabic{page}/\pageref{LastPage}};
+    %\node [anchor=east, xshift=-0.2cm] (footpage) at (box.east) {\fontsize{8}{8}\color{header}\bodyfont \arabic{page}/\pageref{LastPage}};
+    \node [anchor=east, xshift=-0.2cm] (footpage) at (box.east) {\fontsize{8}{8}\color{header}\bodyfont Ver: \the\revision};
   \end{tikzpicture}
 }
 
