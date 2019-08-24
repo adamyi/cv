@@ -1,0 +1,17 @@
+name: Compile CV
+on:
+  push:
+    paths:
+    - src/*
+
+jobs:
+  compile:
+    name: Compile
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: docker://adamyi/python-with-latex:latest
+      with:
+        entrypoint: /github/workspace/ci/github.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
