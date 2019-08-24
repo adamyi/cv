@@ -66,12 +66,12 @@
 \RequirePackage{unicode-math}
 \RequirePackage{fontawesome}
 
-\newfontfamily\bodyfont[]{Helvetica Neue}
-\newfontfamily\thinfont[]{Helvetica Neue UltraLight}
-\newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+\newfontfamily\bodyfont[]{Roboto}
+\newfontfamily\thinfont[]{Roboto Thin}
+\newfontfamily\headingfont[]{RobotoCondensed-Bold}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+\setmainfont[Mapping=tex-text, Color=textcolor]{Roboto Light}
 
 %\setmathfont{XITS Math}
 
@@ -204,7 +204,7 @@
   \item[\textbf{#1}]
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #2}\\%
-    #3\vspace{0.6em}%
+    #3\vspace{0.1em}
 }
 
 %%%%%%%%%%%%%%
@@ -371,7 +371,7 @@
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=1.3cm,top=0.8cm,right=1.3cm,bottom=1.0cm,nohead,nofoot]{geometry}
+\RequirePackage[left=1.3cm,top=0.8cm,right=1.3cm,bottom=0.5cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
 \hypersetup{
   colorlinks=false,
