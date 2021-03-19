@@ -40,6 +40,8 @@
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
 
+\definecolor{darknight}{HTML}{131A28}
+
 \ifdefined\@cv@print
   \colorlet{green}{gray}
   \colorlet{orange}{gray}
@@ -147,28 +149,32 @@
 %%%%%%%%%%%%%
 \RequirePackage{parskip}
 
-\newcounter{colorCounter}
-\def\@sectioncolor#1#2#3{%
-  {%
-    \color{%
-      \ifcase\value{colorCounter}%
-        green\or%
-        blue\or%
-        red\or%
-        purple\or%
-        orange\or%
-        brown\else%
-        headercolor\fi%
-    } #1#2#3%
-  }%
-  \stepcounter{colorCounter}%
+%\newcounter{colorCounter}
+%\def\@sectioncolor#1#2#3{%
+%  {%
+%    \color{%
+%      \ifcase\value{colorCounter}%
+%        green\or%
+%        blue\or%
+%        red\or%
+%        purple\or%
+%        orange\or%
+%        brown\else%
+%        headercolor\fi%
+%    } #1#2#3%
+%  }%
+%  \stepcounter{colorCounter}%
+%}
+
+\def\@sectioncolor#1#2#3{
+  {{\color{darknight}#1#2#3}}%
 }
 
 \renewcommand{\section}[1]{
   % \par\vspace{.3\parskip}
   {%
-    \LARGE\headingfont\color{headercolor}%
-    \@sectioncolor #1%
+    \LARGE\headingfont\color{darknight}%
+    #1%
   }
   % \par\vspace{.2\parskip}
 }
