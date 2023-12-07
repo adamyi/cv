@@ -22,10 +22,10 @@ build/adamyi-cv.cls: src/adamyi-cv.cls build
 	cp src/adamyi-cv.cls build/adamyi-cv.cls
 
 build/cv_print.tex: src/cv.tex build REVISION
-	python src/generate_versions.py
+	python3 src/generate_versions.py
 
 build/cv_screen.tex: src/cv.tex build REVISION
-	python src/generate_versions.py
+	python3 src/generate_versions.py
 
 build:
 	mkdir build
